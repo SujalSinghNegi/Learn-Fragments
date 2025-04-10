@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.learnfragments.databinding.ActivityMainBinding
 import com.example.learnfragments.fragments.BlankFragment1
+import com.example.learnfragments.fragments.BlankFragment2
 import kotlin.getValue
 
 class MainActivity : AppCompatActivity() {
@@ -26,5 +27,17 @@ class MainActivity : AppCompatActivity() {
         var tr= manager.beginTransaction() // startof transaction
         tr.replace(R.id.frame, BlankFragment1()) // what tr,
         tr.commit() // final done
+        binding.button1.setOnClickListener {
+            var manager = supportFragmentManager // support of fm
+            var tr= manager.beginTransaction() // startof transaction
+            tr.replace(R.id.frame, BlankFragment1())
+            tr.commit()
+        }
+        binding.button2.setOnClickListener {
+            var manager = supportFragmentManager // support of fm
+            var tr= manager.beginTransaction() // startof transaction
+            tr.replace(R.id.frame, BlankFragment2())
+            tr.commit()
+        }
     }
 }
